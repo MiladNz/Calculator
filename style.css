@@ -4,7 +4,7 @@
 
 .calculator {
     max-width: 280px;
-    background: #eee;
+    background: #eeeeee;
 }
 .calculator-buttons {
     display: grid;
@@ -13,7 +13,7 @@
 }
 .calc-result {
     background: #1e7145;
-    color: #fff;
+    color: #ffffff;
     border-radius: 5px;
     font-size: 2rem;
     border: 0;
@@ -22,12 +22,12 @@
     width: 100%;
     height: 100px;
 }
-.clear-span{
+.span-2 {
     grid-column: span 2;
 }
-.zero-span{
+/* .zero-span{
     grid-column: span 3;
-}
+} */
 .btn{
     font-size:1em;
     height: 55px;
@@ -40,7 +40,7 @@
     background: #fff;
 }
 .light-green{
-    background-color:#d1ec6f;
+    background-color: #d1ec6f;
 }
 /* * {
     padding: 0;
