@@ -38,7 +38,7 @@ function handleSymbol(value) {
             if(temp.length === 1){ //if the screen is any single number, always turn it to 0 when deleting
                 temp = "0";
             }else{
-                temp = temp.substring(0,temp.length-1); //delete the numbers one by one
+                temp = temp.substr(0,temp.length-1); //delete the numbers one by one
             }
             breake;
             
