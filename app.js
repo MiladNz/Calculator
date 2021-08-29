@@ -33,6 +33,7 @@ function handleSymbol(value) {
             prevOperator = null;
             currTotal = 0;
             break;
+
         case "←":
             if(temp.length === 1){ //if the screen is any single number, always turn it to 0 when deleting
                 temp = "0";
@@ -40,6 +41,7 @@ function handleSymbol(value) {
                 temp = temp.substring(0,temp.length-1); //delete the numbers one by one
             }
             breake;
+            
         default:
             handleMath(value);
             break;
