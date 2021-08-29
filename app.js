@@ -10,14 +10,14 @@ document.querySelector(".calculator-buttons").addEventListener("click", (e)=>{
 //separates the value of the button clicks into NotANumber and Numbers
 function buttonClick(value) {
     if(isNaN(parseInt(value))){
-        handelSymbol(value);
+        handleSymbol(value);
     }else{
-        handelNumber(value);
+        handleNumber(value);
     }
-    renderScreen();
+    rerenderScreen();
 }
 
-function handelSymbol(value) {
+function handleSymbol(value) {
     switch (value){
         case "C":
             temp = "0";
@@ -44,4 +44,40 @@ function handelSymbol(value) {
             handleMath(value);
             break;
     }
+}
+
+function handleNumber(value){
+    if(temp === "0"){
+        temp = value;
+    }else{
+        temp += value;
+    }
+}
+
+function handleMath(value){
+    const internalBuffer = parseInt(temp);
+    
+    if (currTotal === 0){
+        currTotal = internalBuffer;
+    }else{
+        flushOperation(internalBuffer);
+    }
+    prevOperator = value;
+    temp = "0";
+}
+
+function flushOperation(internalBuffer){
+    if(prevOperator === "+"){
+        currTotal += internalBuffer;
+    }else if(prevOperator === "-"){
+        currTotal -= internalBuffer;
+    }else if(prevOperator === "*"){
+        currTotal *= internalBuffer;
+    }else{
+        currTotal /= internalBuffer;
+    }
+}
+
+function rerenderScreen(){
+    calcScreen.value = temp;
 }
